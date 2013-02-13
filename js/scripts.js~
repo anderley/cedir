@@ -1,0 +1,49 @@
+$(document).ready(function () {
+	
+	$('.conteudo-conta table td:last-child').css({
+		'padding-top':'10px',
+		'text-align':'right'
+	});
+	
+	$('table.status td:last-child').css({
+		'width':'40%'
+	});
+	
+	$('.status td:first-child').css({
+		'vertical-align':'middle'
+	});
+	
+	$('table.produto td:nth-child(3)').css('cssText', 'text-align: center !important');
+	
+	$('.caracteristicas dl:nth-child(2n)').css({
+		'background-color':'#f0f0f0'
+	});
+	
+	$('#tabs a').click(function () {
+		var numTab = $(this).attr('value');
+		$('#tabs li').removeClass();
+		$(this).parent().addClass('tab-ativa');
+		$('div[id^=tab]').hide();
+		$('#tab' + numTab).show();
+	});
+	
+	$('.btn-ocultar').hide();
+	
+	$('.btn-detalhar').live('click', function () {
+		$('.btn-ocultar').hide();
+		$('.btn-detalhar').show();
+		$('tr').removeClass('linha-ativa');
+		$(this).hide();
+		$(this).next().show();
+		$('.detalhe').hide();
+		$(this).parent().parent().addClass('linha-ativa');
+		$(this).parent().parent().next('.detalhe').show();
+	});
+	
+	$('.btn-ocultar').live('click', function () {
+		$(this).hide();
+		$(this).prev().show();
+		$('.detalhe').hide();
+		$('tr').removeClass('linha-ativa');
+	});
+});

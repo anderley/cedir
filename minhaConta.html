@@ -1,0 +1,500 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Cedir - Centro de Distribui&ccedil;&atilde;o Ribeir&atilde;opretano</title>
+		<link href="css/styles.css" type="text/css" rel="stylesheet" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/scripts.js"></script>
+	</head>
+	<body>
+		<div id="pagina">
+			<div id="top">
+				<a href="index.html">
+					<img class="logo" src="imagens/logo.png" />
+				</a>
+				<ul>
+					<li><a href="login.html">login</a></li>
+					<li><a href="cadastro.html">cadastrar</a></li>
+					<li><a href="minhaConta.html">meus pedidos</a></li>
+					<li><a href="faleConosco.html">atendimento</a></li>
+				</ul>
+				<p>Seja bem-vindo! Fa&ccedil;a seu login ou cadastre-se</p>
+				<form action="#" method="get">
+					<input type="text" name="procurar" />
+					<input type="button" src="imagens/btn-procurar.png"/>
+				</form>
+				<span>compre pelo telefone&nbsp;&nbsp;<label>(16) 3628-2939</label></span>
+				<a class="carrinho" href="meuCarrinho.html"><label>R$ <b>0,00</b></label></a>
+			</div>
+			<div id="container">
+				<div class="trail">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><b>&gt;</b></li>
+						<li><a href="#">Minha Conta</a></li>
+					<ul>
+				</div>
+				<div class="conteudo-conta">
+					<h3>Minha Conta</h3>
+					<ul id="tabs">
+						<li class="tab-ativa">
+							<a href="#" value="1">Meus Dados</a>
+						</li>
+						<li>
+							<a href="#" value="2">Meus Pedidos</a>
+						</li>
+					</ul>
+					<div id="tab1">
+						<h5>Dados Pessoais</h5>
+						<label>Nome Completo:</label><span>Fulano de Tal</span><br/>
+						<label>Apelido:</label><span>fula</span><br/>
+						<label>Email:</label><span>fulano@gmail.com</span><br/>
+						<label>Data de nascimento:</label><span>01/01/1991</span><br/>
+						<label>CPF:</label><span>111.222.333-44</span><br/>
+						<label>Sexo:</label><span>Masculino</span><br/>
+						<label>Telefone:</label><span>(16) 1111-2222</span><br/>
+						<label>Celular:</label><span>(16) 9999-1111</span><br/>
+						<input class="btn-editar" type="button" />
+						<br/>
+						<h5>Minhas Opni&otilde;es</h5>
+						<p>Nenhuma opni&atilde;o dada.</p>
+					</div>
+					<div id="tab2" style="display: none">
+						<b>N&uacute;mero Pedido:</b><input type="text" name="num_pedido" />
+						<input class="btn-buscar" type="button" value=""/>
+						<b>Data de:</b><input type="text" name="data_ini" />
+						<b>At&eacute;:</b><input type="text" name="data_fim" />
+						<input class="btn-buscar" type="button" value=""/>
+						<br/>
+						<table cellspacing="0" cellpadding="5" width="100%">
+							<tr>
+								<td>1365987</td>
+								<td>15/03/2011</td>
+								<td>R$ 590,89</td>
+								<td>
+									<input class="btn-detalhar" type="button" value="" />
+									<input class="btn-ocultar" type="button" value="" />
+								</td>
+							</tr>
+							<tr class="detalhe" style="display:none;">
+								<td colspan="4">
+									<div>
+										<h5>Detalhe do Pedido</h5>
+										<table class="produto" cellspacing="0" cellpadding="0">
+											<tr>
+												<th>Produto</th>
+												<th>Pre&ccedil;o Unit.</th>
+												<th>Qtd.</th>
+												<th>Frete</th>
+												<th>Total</th>
+											</tr>
+											<tr>
+												<td width="50%">
+													<img src="./produtos/02.png" width="80"/>
+													<p>Smartphone Samsung Galaxy W GT-I8150 c/ Android 2.3, Processador 1.4GHz, C&acirc;mera de 5MP, Wi-Fi, GPS-Black (Tim Desbloqueado)</p>
+												</td>
+												<td>R$ 189,90</td>
+												<td>1</td>
+												<td>R$ 0,00</td>
+												<td>R$ 189,90</td>
+											</tr>
+										</table>
+										<table class="resumo" cellspacing="0" cellpadding="0">
+											<tr>
+												<th colspan="2">
+													Resumo
+												</th>
+											</tr>
+											<tr>
+												<td><b>Endere&ccedil;o de entrega:</b><br/>Av. Paulista, 1254 S&atilde;o Paulo - SP</td>
+												<td><b>Forma de pagamento:</b><br/>Cart&atilde;o VISA (139,90 em 10x) sem juros</td>
+											</tr>
+										</table>
+										<table class="status" cellspacing="0" cellpadding="0">
+											<tr>
+												<th colspan="4">
+													Status da entrega
+												</th>
+											</tr>
+											<tr>
+												<td><span class="ico-ok"></span></td>
+												<td><b>Serpara&ccedil;&atilde;o em estoque</b></td>
+												<td><b>15/03/2011 08:30</b></td>
+												<td><p>Pedido est&aacute; em separa&ccedil;&atilde;o.</p></td>
+											</tr>
+											<tr>
+												<td><span class="ico-alerta"></span></td>
+												<td><b>Serpara&ccedil;&atilde;o em estoque</b></td>
+												<td><b>15/03/2011 11:15</b></td>
+												<td><p>Emissão nota fiscal.</p></td>
+											</tr>
+											<tr>
+												<td><span class="ico-alerta"></span></td>
+												<td><b>Serpara&ccedil;&atilde;o em estoque</b></td>
+												<td><b>15/03/2011 12:05</b></td>
+												<td><p>Produto entregue para a transportadora.</p></td>
+											</tr>
+											<tr>
+												<td><span class="ico-ok"></span></td>
+												<td><b>Produto entregue</b></td>
+												<td><b>17/03/2011 14:25</b></td>
+												<td><p>Seu produto foi entregue com sucesso. Foi um prazer atend&ecirc;-lo, obrigado.</p></td>
+											</tr>
+										</table>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>1365987</td>
+								<td>15/03/2011</td>
+								<td>R$ 590,89</td>
+								<td>
+									<input class="btn-detalhar" type="button" value="" />
+									<input class="btn-ocultar" type="button" value="" />
+								</td>
+							</tr>
+							
+							<tr class="detalhe" style="display:none;">
+								<td colspan="4">
+									<div>
+										<h5>Detalhe do Pedido</h5>
+										<table class="produto" cellspacing="0" cellpadding="0">
+											<tr>
+												<th>Produto</th>
+												<th>Pre&ccedil;o Unit.</th>
+												<th>Qtd.</th>
+												<th>Frete</th>
+												<th>Total</th>
+											</tr>
+											<tr>
+												<td width="50%">
+													<img src="./produtos/02.png" width="80"/>
+													<p>Smartphone Samsung Galaxy W GT-I8150 c/ Android 2.3, Processador 1.4GHz, C&acirc;mera de 5MP, Wi-Fi, GPS-Black (Tim Desbloqueado)</p>
+												</td>
+												<td>R$ 189,90</td>
+												<td>1</td>
+												<td>R$ 0,00</td>
+												<td>R$ 189,90</td>
+											</tr>
+										</table>
+										<table class="resumo" cellspacing="0" cellpadding="0">
+											<tr>
+												<th colspan="2">
+													Resumo
+												</th>
+											</tr>
+											<tr>
+												<td><b>Endere&ccedil;o de entrega:</b><br/>Av. Paulista, 1254 S&atilde;o Paulo - SP</td>
+												<td><b>Forma de pagamento:</b><br/>Cart&atilde;o VISA (139,90 em 10x) sem juros</td>
+											</tr>
+										</table>
+										<table class="status" cellspacing="0" cellpadding="0">
+											<tr>
+												<th colspan="4">
+													Status da entrega
+												</th>
+											</tr>
+											<tr>
+												<td><span class="ico-ok"></span></td>
+												<td><b>Serpara&ccedil;&atilde;o em estoque</b></td>
+												<td><b>15/03/2011 08:30</b></td>
+												<td><p>Pedido est&aacute; em separa&ccedil;&atilde;o.</p></td>
+											</tr>
+											<tr>
+												<td><span class="ico-alerta"></span></td>
+												<td><b>Serpara&ccedil;&atilde;o em estoque</b></td>
+												<td><b>15/03/2011 11:15</b></td>
+												<td><p>Emissão nota fiscal.</p></td>
+											</tr>
+											<tr>
+												<td><span class="ico-alerta"></span></td>
+												<td><b>Serpara&ccedil;&atilde;o em estoque</b></td>
+												<td><b>15/03/2011 12:05</b></td>
+												<td><p>Produto entregue para a transportadora.</p></td>
+											</tr>
+											<tr>
+												<td><span class="ico-ok"></span></td>
+												<td><b>Produto entregue</b></td>
+												<td><b>17/03/2011 14:25</b></td>
+												<td><p>Seu produto foi entregue com sucesso. Foi um prazer atend&ecirc;-lo, obrigado.</p></td>
+											</tr>
+										</table>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>1365987</td>
+								<td>15/03/2011</td>
+								<td>R$ 590,89</td>
+								<td>
+									<input class="btn-detalhar" type="button" value="" />
+									<input class="btn-ocultar" type="button" value="" />
+								</td>
+							</tr>
+							
+							<tr class="detalhe" style="display:none;">
+								<td colspan="4">
+									<div>
+										<h5>Detalhe do Pedido</h5>
+										<table class="produto" cellspacing="0" cellpadding="0">
+											<tr>
+												<th>Produto</th>
+												<th>Pre&ccedil;o Unit.</th>
+												<th>Qtd.</th>
+												<th>Frete</th>
+												<th>Total</th>
+											</tr>
+											<tr>
+												<td width="50%">
+													<img src="./produtos/02.png" width="80"/>
+													<p>Smartphone Samsung Galaxy W GT-I8150 c/ Android 2.3, Processador 1.4GHz, C&acirc;mera de 5MP, Wi-Fi, GPS-Black (Tim Desbloqueado)</p>
+												</td>
+												<td>R$ 189,90</td>
+												<td>1</td>
+												<td>R$ 0,00</td>
+												<td>R$ 189,90</td>
+											</tr>
+										</table>
+										<table class="resumo" cellspacing="0" cellpadding="0">
+											<tr>
+												<th colspan="2">
+													Resumo
+												</th>
+											</tr>
+											<tr>
+												<td><b>Endere&ccedil;o de entrega:</b><br/>Av. Paulista, 1254 S&atilde;o Paulo - SP</td>
+												<td><b>Forma de pagamento:</b><br/>Cart&atilde;o VISA (139,90 em 10x) sem juros</td>
+											</tr>
+										</table>
+										<table class="status" cellspacing="0" cellpadding="0">
+											<tr>
+												<th colspan="4">
+													Status da entrega
+												</th>
+											</tr>
+											<tr>
+												<td><span class="ico-ok"></span></td>
+												<td><b>Serpara&ccedil;&atilde;o em estoque</b></td>
+												<td><b>15/03/2011 08:30</b></td>
+												<td><p>Pedido est&aacute; em separa&ccedil;&atilde;o.</p></td>
+											</tr>
+											<tr>
+												<td><span class="ico-alerta"></span></td>
+												<td><b>Serpara&ccedil;&atilde;o em estoque</b></td>
+												<td><b>15/03/2011 11:15</b></td>
+												<td><p>Emissão nota fiscal.</p></td>
+											</tr>
+											<tr>
+												<td><span class="ico-alerta"></span></td>
+												<td><b>Serpara&ccedil;&atilde;o em estoque</b></td>
+												<td><b>15/03/2011 12:05</b></td>
+												<td><p>Produto entregue para a transportadora.</p></td>
+											</tr>
+											<tr>
+												<td><span class="ico-ok"></span></td>
+												<td><b>Produto entregue</b></td>
+												<td><b>17/03/2011 14:25</b></td>
+												<td><p>Seu produto foi entregue com sucesso. Foi um prazer atend&ecirc;-lo, obrigado.</p></td>
+											</tr>
+										</table>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>1365987</td>
+								<td>15/03/2011</td>
+								<td>R$ 590,89</td>
+								<td>
+									<input class="btn-detalhar" type="button" value="" />
+									<input class="btn-ocultar" type="button" value="" />
+								</td>
+							</tr>
+							
+							<tr class="detalhe" style="display:none;">
+								<td colspan="4">
+									<div>
+										<h5>Detalhe do Pedido</h5>
+										<table class="produto" cellspacing="0" cellpadding="0">
+											<tr>
+												<th>Produto</th>
+												<th>Pre&ccedil;o Unit.</th>
+												<th>Qtd.</th>
+												<th>Frete</th>
+												<th>Total</th>
+											</tr>
+											<tr>
+												<td width="50%">
+													<img src="./produtos/02.png" width="80"/>
+													<p>Smartphone Samsung Galaxy W GT-I8150 c/ Android 2.3, Processador 1.4GHz, C&acirc;mera de 5MP, Wi-Fi, GPS-Black (Tim Desbloqueado)</p>
+												</td>
+												<td>R$ 189,90</td>
+												<td>1</td>
+												<td>R$ 0,00</td>
+												<td>R$ 189,90</td>
+											</tr>
+										</table>
+										<table class="resumo" cellspacing="0" cellpadding="0">
+											<tr>
+												<th colspan="2">
+													Resumo
+												</th>
+											</tr>
+											<tr>
+												<td><b>Endere&ccedil;o de entrega:</b><br/>Av. Paulista, 1254 S&atilde;o Paulo - SP</td>
+												<td><b>Forma de pagamento:</b><br/>Cart&atilde;o VISA (139,90 em 10x) sem juros</td>
+											</tr>
+										</table>
+										<table class="status" cellspacing="0" cellpadding="0">
+											<tr>
+												<th colspan="4">
+													Status da entrega
+												</th>
+											</tr>
+											<tr>
+												<td><span class="ico-ok"></span></td>
+												<td><b>Serpara&ccedil;&atilde;o em estoque</b></td>
+												<td><b>15/03/2011 08:30</b></td>
+												<td><p>Pedido est&aacute; em separa&ccedil;&atilde;o.</p></td>
+											</tr>
+											<tr>
+												<td><span class="ico-alerta"></span></td>
+												<td><b>Serpara&ccedil;&atilde;o em estoque</b></td>
+												<td><b>15/03/2011 11:15</b></td>
+												<td><p>Emissão nota fiscal.</p></td>
+											</tr>
+											<tr>
+												<td><span class="ico-alerta"></span></td>
+												<td><b>Serpara&ccedil;&atilde;o em estoque</b></td>
+												<td><b>15/03/2011 12:05</b></td>
+												<td><p>Produto entregue para a transportadora.</p></td>
+											</tr>
+											<tr>
+												<td><span class="ico-ok"></span></td>
+												<td><b>Produto entregue</b></td>
+												<td><b>17/03/2011 14:25</b></td>
+												<td><p>Seu produto foi entregue com sucesso. Foi um prazer atend&ecirc;-lo, obrigado.</p></td>
+											</tr>
+										</table>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>1365987</td>
+								<td>15/03/2011</td>
+								<td>R$ 590,89</td>
+								<td>
+									<input class="btn-detalhar" type="button" value="" />
+									<input class="btn-ocultar" type="button" value="" />
+								</td>
+							</tr>
+							
+							<tr class="detalhe" style="display:none;">
+								<td colspan="4">
+									<div>
+										<h5>Detalhe do Pedido</h5>
+										<table class="produto" cellspacing="0" cellpadding="0">
+											<tr>
+												<th>Produto</th>
+												<th>Pre&ccedil;o Unit.</th>
+												<th>Qtd.</th>
+												<th>Frete</th>
+												<th>Total</th>
+											</tr>
+											<tr>
+												<td width="50%">
+													<img src="./produtos/02.png" width="80"/>
+													<p>Smartphone Samsung Galaxy W GT-I8150 c/ Android 2.3, Processador 1.4GHz, C&acirc;mera de 5MP, Wi-Fi, GPS-Black (Tim Desbloqueado)</p>
+												</td>
+												<td>R$ 189,90</td>
+												<td>1</td>
+												<td>R$ 0,00</td>
+												<td>R$ 189,90</td>
+											</tr>
+										</table>
+										<table class="resumo" cellspacing="0" cellpadding="0">
+											<tr>
+												<th colspan="2">
+													Resumo
+												</th>
+											</tr>
+											<tr>
+												<td><b>Endere&ccedil;o de entrega:</b><br/>Av. Paulista, 1254 S&atilde;o Paulo - SP</td>
+												<td><b>Forma de pagamento:</b><br/>Cart&atilde;o VISA (139,90 em 10x) sem juros</td>
+											</tr>
+										</table>
+										<table class="status" cellspacing="0" cellpadding="0">
+											<tr>
+												<th colspan="4">
+													Status da entrega
+												</th>
+											</tr>
+											<tr>
+												<td><span class="ico-ok"></span></td>
+												<td><b>Serpara&ccedil;&atilde;o em estoque</b></td>
+												<td><b>15/03/2011 08:30</b></td>
+												<td><p>Pedido est&aacute; em separa&ccedil;&atilde;o.</p></td>
+											</tr>
+											<tr>
+												<td><span class="ico-alerta"></span></td>
+												<td><b>Serpara&ccedil;&atilde;o em estoque</b></td>
+												<td><b>15/03/2011 11:15</b></td>
+												<td><p>Emissão nota fiscal.</p></td>
+											</tr>
+											<tr>
+												<td><span class="ico-alerta"></span></td>
+												<td><b>Serpara&ccedil;&atilde;o em estoque</b></td>
+												<td><b>15/03/2011 12:05</b></td>
+												<td><p>Produto entregue para a transportadora.</p></td>
+											</tr>
+											<tr>
+												<td><span class="ico-ok"></span></td>
+												<td><b>Produto entregue</b></td>
+												<td><b>17/03/2011 14:25</b></td>
+												<td><p>Seu produto foi entregue com sucesso. Foi um prazer atend&ecirc;-lo, obrigado.</p></td>
+											</tr>
+										</table>
+									</div>
+								</td>
+							</tr>
+						</table>
+				</div>
+			</div>
+			<div id="footer">
+				<ul>
+					<li><b>Sobre a Cedir</b></li>
+					<li>
+						<ul>
+							<li><a href="#">Nossa Loja</a></li>
+							<li><a href="#">Trabalhe Conosco</a></li>
+							<li><a href="#">Institucional</a></li>
+							<li><a href="#">Politica de Privacidade</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul>
+					<li><b>Central de Atendimento</b></li>
+					<li>
+						<ul>
+							<li><a href="faleConosco.html">Fale Conosco</a></li>
+							<li><a href="#">D&uacute;vidas Frequentes</a></li>
+							<li><a href="#">Televendas</a></li>
+						</ul>
+					</li>
+				</ul>
+				<p>
+					<b>Site Seguro</b><br/>
+					<img src="./imagens/site-seguro.png" /><br/>
+					<img src="./imagens/site-blindado.png" />
+				</p>
+				<br/>
+				<span>
+					<b>Formas de Pagamento</b><br/>
+					<img src="./imagens/bandeiras.png"/>
+				</span>
+				<div>
+					<b>Desenvolvido por</b><img src="./imagens/vmsolutions2.png"/>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
