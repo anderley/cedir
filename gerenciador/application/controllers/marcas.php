@@ -37,23 +37,28 @@ class Marcas extends CI_Controller {
 	public function salvar() {
 		
 		$descricao = $this->input->post('descricao');
+		$id = $this->input->post('id');
 		
 		if (trim($descricao) != "") {		
 			$m = new Marca();
 			$m->where('descricao', $descricao)->get();
 			
-			if ($m->exists()) {
+			if ($m->exists() && !empty($id)) {
 				$this->data['msg'] = array(
 										'class' => 'alert-error',
 										'mensagem' => 'Esta marca já está cadastrado!');
 			} else {
+				$m = new Marca($id);
 				$m->descricao = $descricao;
 				$m->save();
 		
+				$m = new Marca();
+				$msg = 'Marca %s com sucesso!';
+				
 				$this->data['marcas'] =& $m->get();
 				$this->data['msg'] = array(
 										'class' => 'alert-success',
-										'mensagem' => 'Marca cadastrado com sucesso!');
+										'mensagem' => sprintf($msg, ((empty($id)) ? "cadastrada" : "alterada")));
 			}
 		} else {
 			$this->data['msg'] = array(
@@ -75,12 +80,20 @@ class Marcas extends CI_Controller {
 	
 	public function trocar_status() {
 		
-		$marca_id = $this->uri->segment(3);
+		$ids = $this->input->post('ids');
+		$indic_habilitado;
 		
-		$m = new Marca($marca_id);
-		$m->indic_habilitado = (($m->indic_habilitado == 'S') ? 'N' : 'S');
-		$m->save();
+		$marcas = new Marca();
+		$marcas->where_in('id', $ids)->get();
 		
+		foreach($marcas as $m) {
+			if (!isset($indic_habilitado)) {
+				$indic_habilitado = (($m->indic_habilitado == 'S') ? 'N' : 'S');
+			}
+			$m->indic_habilitado = $indic_habilitado;
+			$m->save();
+		}
+		$m = new Marca();
 		$this->data['marcas'] =& $m->get();
 		
 		$this->load->view('templates/marca', $this->data);

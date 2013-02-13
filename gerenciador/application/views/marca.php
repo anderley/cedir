@@ -43,7 +43,6 @@
                             <td>
                                 <div class="btn-group">
                                     <a class="btn btn-mini" href="<?php echo base_url(); ?>index.php/marcas/editar/<?php echo $m->id; ?>" title="Editar"><i class="icon-pencil"></i></a>
-                                    <a id="marca_status_<?php echo $m->id; ?>" class="btn btn-mini" href="#<?php echo $m->id; ?>" title="Ativar/Desativar"><i class="icon-off"></i></a>
                                 </div>
                             </td>
                             <td><input type="checkbox" name="sel_ids[]" value="<?php echo $m->id; ?>"></td>
@@ -60,7 +59,10 @@
 					</span>
 				</div>
 				<div class="row" style="margin-top: 15px;">
-					<button id="removeMarcas" class="btn pull-right" type="button" title="Remover Selecionado(s)"><i class="icon-trash"></i> Remover</button>
+					<span class="pull-right">
+						<button id="marcaStatus" class="btn" type="button" title="Ativar/Desativar"><i class="icon-off"></i> Ativar/Desativar</button>
+						<button id="removeMarcas" class="btn" type="button" title="Remover Selecionado(s)"><i class="icon-trash"></i> Remover</button>
+					</span>
 				</div>
             </div>
         </div>

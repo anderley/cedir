@@ -82,13 +82,20 @@ class Departamento_Itens extends CI_Controller {
 	
 	public function trocar_status() {
 		
-		$depto_id = $this->uri->segment(3);
-		$depto_item_id = $this->uri->segment(4);
+		$depto_id = $this->input->post('depto_id');
+		$ids = $this->input->post('ids');
+		$indic_habilitado;
 		
-		$d_item = new Departamento_Item($depto_item_id);
-		$d_item->indic_habilitado = (($d_item->indic_habilitado == 'S') ? 'N' : 'S');
-		$d_item->save();	
+		$d_itens = new Departamento_Item();
+		$d_itens->where_in('id', $ids)->get();
 		
+		foreach($d_itens as $i) {
+			if (!isset($indic_habilitado)) {
+				$indic_habilitado = (($i->indic_habilitado == 'S') ? 'N' : 'S');
+			}
+			$i->indic_habilitado = $indic_habilitado;
+			$i->save();	
+		}		
 		$d = new Departamento($depto_id);
 		
 		$this->data['depto'] =& $d;

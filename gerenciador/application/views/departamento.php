@@ -43,7 +43,6 @@
                             <td>
                                 <div class="btn-group">
                                     <a class="btn btn-mini" href="<?php echo base_url(); ?>index.php/departamentos/editar/<?php echo $d->id; ?>" title="Editar"><i class="icon-pencil"></i></a>
-                                    <a id="depto_status_<?php echo $d->id; ?>" class="btn btn-mini" href="#<?php echo $d->id; ?>" title="Ativar/Desativar"><i class="icon-off"></i></a>
                                     <?php if ($d->itens->get()->exists()): ?>
 										<a class="btn btn-mini" href="<?php echo base_url(); ?>index.php/departamento_itens/exibir/<?php echo $d->id; ?>" title="Visualizar Itens"><i class="icon-list"></i></a>
 									<?php endif; ?>
@@ -63,7 +62,10 @@
 					</span>
 				</div>
 				<div class="row" style="margin-top: 15px;">
-					<button id="removeDeptos" class="btn pull-right" type="button" title="Remover Selecionado(s)"><i class="icon-trash"></i> Remover</button>
+					<span class="pull-right">
+						<button id="deptoStatus" class="btn" type="button" title="Ativar/Desativar"><i class="icon-off"></i> Ativar/Desativar</button>
+						<button id="removeDeptos" class="btn" type="button" title="Remover Selecionado(s)"><i class="icon-trash"></i> Remover</button>
+					</span>
 				</div>
             </div>
         </div>

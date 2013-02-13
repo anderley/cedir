@@ -54,9 +54,6 @@
 		                        <td>
 		                            <div class="btn-group">
 		                                <a class="btn btn-mini" href="<?php echo base_url(); ?>index.php/departamento_itens/editar/<?php echo $d->id . '/' . $i->id; ?>" title="Editar"><i class="icon-pencil"></i></a>
-										<?php if ($d->indic_habilitado == 'S'): ?>
-											<a id="depto_item_status_<?php echo $i->id; ?>" class="btn btn-mini" href="#<?php echo $i->id; ?>" title="Ativar/Desativar"><i class="icon-off"></i></a>
-										<?php endif; ?>
 		                            </div>
 		                        </td>
 		                        <td><input type="checkbox" name="sel_ids[]" value="<?php echo $i->id; ?>"></td>
@@ -73,7 +70,12 @@
 					</span>
 				</div>
 				<div class="row" style="margin-top: 15px;">
-					<button id="removeDeptoItens" class="btn pull-right" type="button" title="Remover Selecionado(s)"><i class="icon-trash"></i> Remover</button>
+					<span class="pull-right">
+						<?php if ($d->indic_habilitado == 'S'): ?>
+							<button id="deptoItensStatus" class="btn" type="button" title="Ativar/Desativar"><i class="icon-off"></i> Ativar/Desativar</button>
+						<?php endif; ?>
+						<button id="removeDeptoItens" class="btn" type="button" title="Remover Selecionado(s)"><i class="icon-trash"></i> Remover</button>
+					</span>
 				</div>
 			</div>
 		</div>

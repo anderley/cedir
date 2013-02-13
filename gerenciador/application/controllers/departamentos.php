@@ -37,23 +37,28 @@ class Departamentos extends CI_Controller {
 	public function salvar() {
 		
 		$descricao = $this->input->post('descricao');
+		$id = $this->input->post('id');
 		
 		if (trim($descricao) != "") {		
 			$d = new Departamento();
 			$d->where('descricao', $descricao)->get();
 			
-			if ($d->exists()) {
+			if ($d->exists() && !empty($id)) {
 				$this->data['msg'] = array(
 										'class' => 'alert-error',
 										'mensagem' => 'Este departamento já está cadastrado!');
 			} else {
+				$d = new Departamento($id);
 				$d->descricao = $descricao;
 				$d->save();
 		
+				$d = new Departamento();
+				$msg = 'Departamento %s com sucesso!';
+				
 				$this->data['departamentos'] =& $d->get();
 				$this->data['msg'] = array(
 										'class' => 'alert-success',
-										'mensagem' => 'Departamento cadastrado com sucesso!');
+										'mensagem' => sprintf($msg, ((empty($id)) ? "cadastrado" : "atualizado")));
 			}
 		} else {
 			$this->data['msg'] = array(
@@ -86,16 +91,25 @@ class Departamentos extends CI_Controller {
 	
 	public function trocar_status() {
 		
-		$depto_id = $this->uri->segment(3);
+		$ids = $this->input->post('ids');
+		$indic_habilitado;
 		
-		$d = new Departamento($depto_id);
-		$d->indic_habilitado = (($d->indic_habilitado == 'S') ? 'N' : 'S');
-		$d->save();
+		$deptos = new Departamento();
+		$deptos->where_in('id', $ids)->get();
 		
-		foreach($d->itens->get_iterated() as $i) {
-			$i->indic_habilitado = $d->indic_habilitado;
-			$i->save();
+		foreach($deptos as $d) {
+			if (!isset($indic_habilitado)) {
+				$indic_habilitado = (($d->indic_habilitado == 'S') ? 'N' : 'S');
+			}
+			$d->indic_habilitado = $indic_habilitado;
+			$d->save();
+		
+			foreach($d->itens->get_iterated() as $i) {
+				$i->indic_habilitado = $d->indic_habilitado;
+				$i->save();
+			}
 		}		
+		$d = new Departamento();
 		$this->data['departamentos'] =& $d->get();
 		
 		$this->load->view('templates/departamento', $this->data);

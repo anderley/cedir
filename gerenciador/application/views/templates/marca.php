@@ -15,7 +15,6 @@
         <td>
             <div class="btn-group">
                 <a class="btn btn-mini" href="<?php echo base_url(); ?>index.php/marcas/editar/<?php echo $m->id; ?>" title="Editar"><i class="icon-pencil"></i></a>
-                <a id="marca_status_<?php echo $m->id; ?>" class="btn btn-mini" href="#<?php echo $m->id; ?>" title="Ativar/Desativar"><i class="icon-off"></i></a>
             </div>
         </td>
         <td><input type="checkbox" name="sel_ids[]" value="<?php echo $m->id; ?>"></td>
